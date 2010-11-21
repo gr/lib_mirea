@@ -1,0 +1,16 @@
+<h1>Generate last entrys</h1>
+{% if mesage %}
+{{ message }}
+{% else %}
+{{asd}}
+<p>Generate array of books from {{keyword}} date </p>
+<p>{{b_len}} books was reminded</p>
+{{query}}
+{% for book in books %}
+
+<p>{{ book.f200__a }}
+{{ book.type }}
+</p>
+
+{% endfor %}
+{% endif %}

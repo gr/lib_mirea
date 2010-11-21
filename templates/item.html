@@ -1,0 +1,12 @@
+{% extends "pages.html" %}
+	{% block head %}{{ block.super }}{% endblock head %}
+	{% block title %}{{ item.title }}{% endblock title %}
+	{% block menu %}{{ block.super }}{% endblock menu %}
+	{% block search %}{{ block.super }}{% endblock search %}
+	{% block content %}{{ block.super }}<div id="content" class="simple item content-item">
+		{% ifequal need_type.name 'Ресурсы' %}<h2 class="sauce_header item">{{ item.typograf_title }}</h2>{% endifequal %}
+		{% ifequal need_type.name 'Справка' %}<h2 class="info_header item">{{ item.typograf_title }}</h2>{% endifequal %}
+		{% ifequal need_type.name 'Объявления' %}<h2 class="events_header item">{{ item.typograf_title }}</h2>{% endifequal %}
+		{% ifequal need_type.name 'О библиотеке' %}<h2 class="about_header item">{{ item.typograf_title }}</h2>{% endifequal %}
+		{{ item.typograf_content }}
+	</div>{% endblock content %}

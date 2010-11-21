@@ -1,0 +1,854 @@
+/* CSS for MIREA Library site
+ * by Igor Spisivtsev         
+ * version 1.9999
+ *
+ *
+ */
+
+/* RESET
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	line-height: inherit;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+:focus {
+	outline: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+/* Global Links
+ */
+a {
+	text-decoration: none;
+	border-bottom: #ccc solid 1px;
+}
+
+a:link {
+	color: #906;
+}
+
+a:visited {
+	color: #969;
+}
+
+a:hover, 
+a:focus,
+a:active {
+	color: #f09;
+	border-bottom-color: #f09;
+}
+
+a.local {
+	border-bottom-style: dashed;
+}
+
+a.local-target {
+	border: none;
+	color: inherit;
+}
+
+/* Wrappers
+ */
+body {
+	background-color: #fff;
+	/*background-image: url(/media/img/22px_line.png);*/
+	color: #333;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 62.5%; /* 10px */
+	line-height: 2.2em; /* 22px */
+}
+
+div#box {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1600px;
+	min-width: 920px;
+}
+
+div#container {
+	/*border: dashed 1px #333;*/
+	overflow: hidden;
+}
+
+/* Header
+ */
+div#header {
+	/*border: dashed 1px #900;*/
+	padding: 2.2em 3.2em;
+	overflow: hidden;
+}
+
+div#header h1 {
+	/*border: solid 1px #090;*/
+	font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+	font-size: 2em;
+	font-style: normal;
+	font-weight: normal;
+	float: right;
+	line-height: 1.1em;
+	text-shadow: #fff 1px 1px 0px;
+}
+
+div#header h1 a {
+	background-color: transparent;
+	border: 0;
+	color: #333;
+	text-decoration: none;
+}
+
+div#header h1 span {
+	display: block;
+	text-align: center;
+}
+
+div#header h1 span#line_2 {
+	margin-top: .0625em;
+}
+
+div#header h1 span#line_2,
+div#header h1 span#line_3,
+div#header h1 span#line_4 {
+	font-size: .8em;
+	line-height: 1.375em;
+}
+
+/* Menu Main
+ */
+ul#menu_main {
+	/*border: solid 1px #090;*/
+	font-size: 1.8em;
+	margin-left: -.3333em;
+	/*overflow: hidden; Опера с этим не хочет правильно работать */
+	padding-top: 2.4444em;
+	/*padding-bottom: 1.2222em;*/
+}
+
+ul#menu_main li {
+	/*border: solid 1px #900;*/
+	display: -moz-inline-box;
+	display: inline-block;
+	margin-right: 1.4444em; /* 26px */
+	padding: 0 .3333em 1.2222em .3333em;
+}
+
+ul#menu_main li a {
+	background-color: transparent;
+	padding-bottom: .0555em;
+	text-decoration: none;
+}
+ul#menu_main li a:link,
+ul#menu_main li a:visited,
+ul#menu_main li a:hover,
+ul#menu_main li a:active,
+ul#menu_main li a:focus {
+	border-bottom-style: solid;
+	border-bottom-width: 0.0555em;
+}
+
+ul#menu_main li a:hover,
+ul#menu_main li a:active,
+ul#menu_main li a:focus {color: #fff!important;}
+
+ul#menu_main li.sauce a {border-bottom-color: #690;}
+ul#menu_main li.sauce a:link,
+ul#menu_main li.sauce a:visited {color: #690;}
+ul#menu_main li.sauce a:hover,
+ul#menu_main li.sauce a:active,
+ul#menu_main li.sauce a:focus {background-color: #690;}
+
+ul#menu_main li.info a {border-bottom-color: #930;}
+ul#menu_main li.info a:link,
+ul#menu_main li.info a:visited {color: #930;}
+ul#menu_main li.info a:hover,
+ul#menu_main li.info a:active,
+ul#menu_main li.info a:focus {background-color: #930;}
+
+ul#menu_main li.events a {border-bottom-color: #069;}
+ul#menu_main li.events a:link,
+ul#menu_main li.events a:visited {color: #069;}
+ul#menu_main li.events a:hover,
+ul#menu_main li.events a:active,
+ul#menu_main li.events a:focus {background-color: #069;}
+
+ul#menu_main li.about a {border-bottom-color: #639;}
+ul#menu_main li.about a:link,
+ul#menu_main li.about a:visited {color: #639;}
+ul#menu_main li.about a:hover,
+ul#menu_main li.about a:active,
+ul#menu_main li.about a:focus {background-color: #639;}
+
+/* Menu Main Selected
+ */
+ul#menu_main li.sauce_selected,
+ul#menu_main li.info_selected, 
+ul#menu_main li.events_selected,
+ul#menu_main li.about_selected {
+	background: url(/media/img/arr.gif) bottom left no-repeat;
+	color: #fff;
+}
+
+ul#menu_main li.sauce_selected a,
+ul#menu_main li.info_selected a,
+ul#menu_main li.events_selected a,
+ul#menu_main li.about_selected a {
+	border-bottom: none!important;
+	color: #fff;
+}
+
+ul#menu_main li.sauce_selected,
+ul#menu_main li.sauce_selected a {background-color: #690;}
+
+ul#menu_main li.info_selected,
+ul#menu_main li.info_selected a {background-color: #930;}
+
+ul#menu_main li.events_selected,
+ul#menu_main li.events_selected a {background-color: #069;}
+
+ul#menu_main li.about_selected,
+ul#menu_main li.about_selected a {background-color: #639;}
+
+
+/* Search Form Common
+ */
+div#search {
+	/*border: #333 dashed 1px;*/
+	margin-left: 3.2em;
+	margin-right: 3.2em;
+	margin-bottom: 2.2em;
+	overflow: hidden;
+	height: 2.2em; /* одна строка */
+}
+
+p#search_field_p, p#search_button_p {
+	height: 2.1em;
+	vertical-align: top;
+}
+
+p#search_field_p {
+	/*border: solid 1px #c30;*/
+	padding-right: 6.6em;
+}
+
+p#search_button_p {
+	/*border: solid 1px #03c;*/
+	float: right;
+	position: relative;
+	top: -2.2em;
+}
+
+input#search_field, input#search_button {
+	font-size: 1.2em;
+}
+
+input#search_field, input#search_button {
+	font-family: sans-serif;
+}
+
+input#search_field {
+	background-color: #fff;
+	border: #333 solid 2px;
+	height: 1.25em;
+	width: 100%;
+}
+
+.placeholder {
+	color: #999;
+}
+
+/* Search Form at Pages
+ */
+body#page div#search {
+	clear: right; /* Опера 9.5б без этого глючит */
+	float: right;
+	width: 31em; /* по ширине заголовка */
+}
+
+body#page p#search_field_p {
+	margin-left: 0;
+}
+
+/* Index: Events
+ */
+div#events {
+	/*border: dashed #6ff 1px; margin-right: -2px;*/
+	float: left;
+	width: 72%;
+}
+
+div#col3 {
+	/*border: dashed #333 1px; margin-left: -2px;*/
+	float: right;
+	width: 28%;
+}
+
+div#events ul {
+	/*padding-right: 2.6em; /* 26px */
+	padding-left: .6em; /* 32-26 */
+}
+
+div#events li {
+	/*border: dashed 1px #009;*/
+	display: -moz-inline-stack;
+	display: inline-block;
+	margin-bottom: 2.2em;
+	vertical-align: top;
+	width: 50%;
+}
+
+div#events li div.event {
+	/*border: dashed 1px #090;*/
+	font-size: 1.6em;
+}
+
+div#events div.ff2-box-fix-event {
+	overflow: hidden;
+	padding-left: 1.625em; /* 26/16 */
+}
+
+div#events h2 {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 1.125em; /* 18px */
+	font-weight: normal;
+	margin-left: -1.4444em;
+	margin-bottom: .5555em; /* 10/18 */
+	padding-left: 1.4444em; /* 26/18 */
+}
+
+div#events h2 a {
+	background-color: transparent;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	color: #069; /*#09c;*/
+	text-decoration: none;
+}
+
+div#events h2 a:link,
+div#events h2 a:visited {
+	border-bottom-color: #ccc;
+}
+
+div#events h2 a:hover,
+div#events h2 a:active,
+div#events h2 a:focus {
+	border-bottom-color: #069;
+}
+
+div#events img {
+	float: left;
+	padding: 0.4286em 0.7em 0.4286em 0;
+	max-width: 100%;
+}
+
+div#last,
+div#about,
+div#map {
+	/*border: dashed 1px #333;*/
+	padding-right: 3.2em;
+	padding-left: 2.6em;
+}
+
+div#about,
+div#last {
+	margin-bottom: 2.8em;
+}
+
+div#map img {
+	margin-left: -.3em;
+}
+
+div#info ul li,
+div#about ul li,
+div#last ul li {
+	font-size: 1.4em;
+	margin-bottom: .8571em;
+}
+
+div#info h2,
+div#map h2 {
+	height: 0;
+	overflow: hidden;
+}
+
+div#about h2,
+div#last h2 {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 1.6em;
+	margin-bottom: .375em;
+}
+
+div#last h2 a,
+div#about h2 a {
+	color: #333;
+	background-color: transparent;
+}
+
+div#last h2 a:hover,
+div#about h2 a:hover {
+	border-bottom-color: #333;
+}
+
+div#map a {
+	background-color: transparent;
+	border: none;
+}
+
+div#last p.author {
+	font-style: italic;
+	/*white-space: nowrap;*/
+}
+
+p.ecat_arr {
+	background: url(/media/img/arr_right_hmd.png) bottom right no-repeat;
+	padding-right: 6px;
+}
+
+
+/* Index: Events Content
+ */
+div#events p + p {
+	margin-top: 0;
+	text-indent: 2.75em;
+}
+
+
+div#events blockquote,
+div#events p.quoteauthor {
+	font-size: .875em; /* 14/16px*/
+}
+
+div#events blockquote {
+	font-style: italic;
+	padding-left: 3em;
+	overflow: hidden;
+	zoom: 1;
+}
+
+div#events p.quoteauthor {
+	padding-left: 4.75em;
+}
+
+div#events blockquote  p.quoteauthor {
+	font-size: 1em;
+	font-style: normal;
+}
+
+div#events p + blockquote {
+	margin-top: 1.375em;
+}
+
+div#events p.quoteauthor + p,
+div#events blockquote + p {
+	margin-top: 1.375em;
+	text-indent: 0;
+}
+
+div#events blockquote + p.quoteauthor {
+	margin-top: .625em;
+}
+
+div#events li li { /* чтобы не зацепить элементы-контейнеры */
+	margin-left: 2em;
+	margin-bottom: .5em;
+}
+
+/* Pages Right Menu 
+ */
+div#menu_right {
+	/*border: dashed 1px #900;*/
+	clear: right;
+	float: right;
+	padding-right: 3.2em; /* 32px */
+	padding-left: 3.2em;
+	width: 31em; /* по ширине заголовка */
+}
+
+div#menu_right ul {
+	font-size: 1.4em;
+}
+
+div#menu_right ul li {
+	margin-bottom: .7143em;
+}
+
+div#menu_right li.selected {
+	color: #999;
+}
+
+div#content {
+	font-size: 1.6em;
+	overflow: hidden;
+}
+
+/* Index Cards & Lists of IC
+ */
+ol.index-list li {
+	margin-bottom: 2em; /* 32px */
+}
+
+ol.index-list a {
+	padding-bottom: .125em; /* 2px */
+}
+
+ol.index-list a:link {
+	border-bottom: solid 1px #ccc;
+	color: #360;
+}
+
+ol.index-list a:visited {
+	border-bottom: solid 1px #ccc;
+	color: #660;
+	text-decoration: none;
+}
+
+ol.index-list a:hover,
+ol.index-list a:focus,
+ol.index-list a:active {
+	background-color: transparent;
+	border-bottom: solid 1px #c63;
+	color: #c63;
+}
+
+body#page div.index-card {
+	margin-bottom: 1em; /* 16px */
+}
+
+body#page div.index-card p,
+body#page div.record p { /* Сбросить отступ первой строки */
+	text-indent: 0!important;
+	margin-top: 0!important;
+}
+
+div.index-card p {
+	line-height: 1.375em; /* 22px */
+	margin-bottom: .375em; /* 6px */
+}
+
+div.index-card p.author {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: .875em;
+	font-style: italic;
+}
+
+div.index-card p.parent-bib-desc,
+div.index-card p.bib-desc {
+	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif; /*"Times New Roman", Times, serif;*/
+}
+
+div.index-card p.child-bib-desc {
+	padding-left: 2em;
+}
+
+div.index-card p.parent-bib-desc b {
+	/*font-weight: normal;*/
+}
+
+div.index-card p.parent-isbn,
+div.index-card p.isbn,
+div.index-card p.code,
+div.index-card p.workbook-number {
+	/*background-color: #ccc;*/
+	color: #666;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: .875em; /* 14px */
+	text-shadow: #fff 1px 1px 0px;
+}
+div.index-card p.child-isbn {
+	padding-left: 2.2857em;
+}
+
+div.index-card p.parent-isbn {
+	/*color: inherit;*/
+}
+
+div.index-card p.workbook-number {
+	color: #333;
+	text-shadow: none;
+}
+
+/* Single Record (Store, About and Download Link)
+ */
+body#page div.record h2.request { /* Hide printable Title */
+	display: none;
+}
+
+body#page div.record p.store {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: .875em; /* 14px */
+}
+
+body#page div.record p.store span.name {
+	margin-right: 1em;
+	text-transform: lowercase;
+}
+
+body#page div.record p.store span.count {
+	font-weight: bold;
+}
+
+body#page div.record p.download {
+	margin-top: 1.375em!important;
+	padding-bottom: 1px;
+}
+
+body#page div.record p.download a {
+	background-color: #690;
+	border: solid 1px #360;
+	-moz-border-radius: .875em;
+	-webkit-border-radius: .875em;
+	color: #fff;
+	display: block;
+	font-size: 1.125em;
+	line-height: 26px;
+	overflow: hidden;
+	height: 26px;
+	text-align: center;
+	text-shadow: #333 1px 1px 1px;
+	width: 94px;
+}
+
+body#page div.record p.download a:link,
+body#page div.record p.download a:visited {
+}
+
+body#page div.record p.download a:hover,
+body#page div.record p.download a:focus,
+body#page div.record p.download a:active {
+	background-color: #9c0;
+	border-color: #690;
+}
+
+body#page div.record p.download a:active {
+	position: relative;
+	left: 1px;
+	top: 1px;
+}
+
+/* Footer
+ */
+div#footer {
+	/*border: dashed 1px #009;*/
+	/*border-top: #333 solid .2em;*/
+	margin-top: 2.2em;
+	padding-left: .6em;
+	padding-bottom: 2.2em;
+}
+
+div#footer hr {
+	border: solid .1em #333;
+	margin: 0 3.2em 2em 2.6em;
+}
+
+div#time_table,
+div#contacts,
+div#copy {
+	/*border: dashed 1px #333;*/
+	display: -moz-inline-box; /* inline-box для ФФ2 + div в шаблоне */
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer: Time Table
+ */
+div#time_table {
+	width: 36%;
+}
+div#contacts {
+	width: 24%;
+}
+div#copy {
+	width: 40%;
+}
+
+div#time_table table,
+div#contacts p,
+div#copy p {
+	font-size: 1.4em;
+	margin-left: 1.8571em; /* 26/14 */
+}
+
+div#time_table sup {
+	font-size: .8571em;
+	line-height: .5714em; /* 8px */
+	vertical-align: super;
+}
+
+div#time_table td {
+	padding-right: .625em;
+	vertical-align: baseline;
+}
+      
+div#time_table tr.four {
+	color: #a00;
+}
+
+div#time_table span {
+	display: -moz-inline-box;
+	display: inline-block;
+	width: 2em;
+}
+
+div#time_table span.thu {
+	padding-left: 2em;
+}
+div#time_table span.wed {
+	padding-left: 4em;
+}
+div#time_table span.fri {
+	padding-left: 2em;
+}
+div#time_table span.sat {
+	padding-left: 10em;
+}
+div#time_table span.sun {
+	padding-left: 12em;
+}    
+
+/* Footer: Contacts
+ */
+div#contacts p {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+div#contacts a.tel {
+	border: none;
+	color: #333;
+}
+
+div#contacts sup {
+	font-size: .8571em; /* 12 */
+	line-height: 1em;
+	vertical-align: text-top;
+}
+
+div#contacts sup.second-code {
+	position: relative;
+	top: -1.5714em; /* 22px — one line up */
+}
+
+/* Footer: Copyright
+ */
+div#copy p {
+	margin-right: 2.2857em; /* 32px */
+}
+
+/* Hanging Punctuation
+ */
+span.laquo { margin-left: -0.5714em }
+span.raquo { margin-right: -0.5714em }
+span.lbr { margin-left: -0.3em }
+span.rbr { margin-right: -0.3em }
+span.point { margin-right: -0.2em }
+span.ensp { word-spacing: 0.5714em }
+span.nbsp { word-spacing: 0.3em }
+span.thinsp { word-spacing: 0.2em }
+
+/* PRINT
+ */
+@media print {
+	* {
+		color: #000!important;
+	}
+	a {
+		text-decoration: none!important;
+		border-bottom: none!important;
+	}
+	div#header {
+		border-bottom: solid 1px #333;
+		margin-right: 3.2em;
+		margin-left: 3.2em;
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 2.2em;
+	}	
+	h1 span#line_4 {
+		display: none!important;
+	}
+	h1,
+	body#search div.at_ecat {
+		float: none!important;
+	}
+	
+	ul#menu_main,
+	div#search,
+	body#search div.at_site,
+	body#search div.at_map,
+	body#search div.in_ebooks,
+	div#menu_right,
+	div.record h2  {
+		display: none;
+	}
+	body#search div.at_ecat {
+		width: auto!important;
+	}
+	h2.request {
+		display: block!important;
+		text-align: center;
+	}
+	
+	div#content {
+		font-size: 2em!important;
+		line-height: 1.4em;
+		padding-right: 32px!important;
+	}
+	body#page div#content,
+	body#page div.post {
+		padding-left: 32px!important;
+	}
+	body#search div#content {
+		padding-left: 0!important;
+	}
+	body#page div.post {
+		margin-left: -32px!important;
+	}
+	
+	div#footer hr {
+		border-right: none;
+		border-bottom: none;
+		border-left: none;
+	}
+	div#content,
+	div#box,
+	div#container {
+		overflow: visible!important;
+	}
+}

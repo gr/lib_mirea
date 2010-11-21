@@ -1,0 +1,23 @@
+{% for bookset in booksets %}
+    <a href="/bookset/{{bookset.name}}">{{bookset.name}}</a>
+    <p>
+        О наборе книг - {{bookset.about}}<br>
+        бд - {{bookset.db}}<br>
+        Тип запроса в бд - {{bookset.query_type}}<br>
+        Запрос - {{bookset.query}}<br>
+        Обновляется каждый день в - {{bookset.time}}<br>
+        Количество книг в наборе - {{bookset.number_of_books}}<br>
+        Последний раз обновлялось -{{bookset.last_time_update}}<br>
+    </p>
+{% endfor %}
+
+    db = query_type = CharField(u'База данных', max_length=6, choices=DB_CHOICES)
+    query_type = CharField(u'Тип запроса', max_length=3, choices=QUERY_CHOICES)
+    query = TextField(u'Запрос', blank=True)
+    time = TimeField(u'Обновляется каждый день, в')
+    pickled_books = TextField(editable=False)
+    number_of_books = IntegerField(u'Количество книг', editable=False, null=True)
+    last_time_update = DateTimeField(u'Последний раз обновлялось', editable=False, auto_now=True)
+    about = TextField(u'Описание набора книг, будет выводиться на сайте', blank=True)
+    typograf_about = TextField(default='none', editable=False)
+    comment = TextField(u'Техническое описание набора книг, доступно только из админки', blank=True)
