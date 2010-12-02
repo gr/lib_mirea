@@ -1,0 +1,3 @@
+[submodule "apps/btools"]
+	path = apps/btools
+	url = git@github.com:gr/Btools.git
