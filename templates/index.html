@@ -1,0 +1,81 @@
+{% extends "main.html" %}
+
+{% block head %}{{ block.super }}{% endblock head %}
+{% block title %}{{ block.super }}{% endblock title %}
+{% block bodyid %} id="index"{% endblock bodyid %}
+{% block bodyclass %}{% endblock bodyclass %}
+{% block menu %}{{ block.super }}{% endblock menu %}
+{% block search %}{{ block.super }}{% endblock search %}
+
+{% block content %}
+	{% comment %}<div id="promo">
+		<div class="left">
+			<div class="right">
+				<img src="/img/8m/greet.jpg" alt="С 8 марта!">
+			</div>
+		</div>
+	</div>{% endcomment %}
+	<div id="events">
+		<ul>
+			{% for new in news %}<li>
+				<div class="event"><div class="ff2-box-fix-event">
+					<h2><a href="/Объявления/{{ new.id }}">{{ new.typograf_title }}</a></h2>
+					{{ new.typograf_preview }}
+				</div></div>
+			</li>{% endfor %}
+		</ul>
+	</div><div id="col3">
+		<div id="last">
+		{% comment %}
+			<h2><a href="/Набор/{{last_books.name}}">{{last_books.name}}</a></h2>
+			<ul>
+			{% for book in last_books.books|dictsortreversed:"id"|slice:"0:5" %}
+				<li>
+					{% if book.f700__a %}<p class="author">{{book.f700__a}}{% if book.f700__b %} {{ book.f700__b }}{% else %}{% if book.f700__g %} {{ book.f700__g }}{% endif %}{% endif %}</p>{% else %}<p class="author">{% if book.f200__f %}{{book.f200__f}}{% endif %}</p>{% endif %}
+					<p><a href="/book/{{book.id}}">{% if book.f461__200a %}{{ book.f461__200a }}: {% endif %}{{ book.f200__a }}{% if book.f200__h or book.f461__200v %}. {{ book.f200__h }}{{ book.f461__200v }}{% endif %}</a></p>
+				</li>
+			{% endfor %}
+			</ul>
+		{% endcomment %}	
+		</div>
+		<div id="about">
+			<h2><a href="/О библиотеке/">О библиотеке</a></h2>
+			<ul>
+			{% for about in abouts %}
+				<li><a href="/О библиотеке/{{ about.id }}">{{ about.typograf_title }}</a></li>
+			{% endfor %}
+			</ul>
+		</div>
+		<div id="map">
+			<h2>Схема</h2>
+			<img name="minimap" id="minimap" usemap="#minimap-map" src="/media/img/minimap_l.gif" alt="Схема" width="224" height="122">
+			<map name="minimap-map" id="minimap-map">
+				<area shape="rect" coords="2,74,24,99" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="2,99,89,118" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="89,74,221,118" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="144,25,220,51" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="99,25,144,45" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="84,45,144,73" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="49,50,72,73" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="72,25,85,73" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="47,14,88,25" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="37,25,72,50" href="/Схема" title="Схема" alt="Схема">
+				<area shape="rect" coords="57,74,88,98" href="/Схема/105" title="Отдел хранения подсобных фондов" alt="Отдел хранения подсобных фондов">
+				<area shape="rect" coords="25,74,56,98" href="/Схема/103" title="Абонемент учебной литературы" alt="Абонемент учебной литературы">
+				<area shape="rect" coords="4,26,36,50" href="/Схема/211" title="Книгохранение читальных залов" alt="Книгохранение читальных залов">
+				<area shape="rect" coords="4,51,49,73" href="/Схема/212" title="Читальный зал технической литературы" alt="Читальный зал технической литературы">
+				<area shape="rect" coords="86,26,98,45" href="/Схема/cat" title="Каталог" alt="Каталог">
+				<area shape="rect" coords="144,51,167,73" href="/Схема/200" title="Отдел информатизации" alt="Отдел информатизации">
+				<area shape="rect" coords="168,51,195,73" href="/Схема/201" title="Отдел научной обработки литературы" alt="Отдел научной обработки литературы">
+				<area shape="rect" coords="196,51,220,73" href="/Схема/202" title="Отдел художественной литературы" alt="Отдел художественной литературы">
+				<area shape="rect" coords="186,3,220,25" href="/Схема/204" title="Читальный зал периодических изданий" alt="Читальный зал периодических изданий">
+				<area shape="rect" coords="152,3,185,25" href="/Схема/205" title="Справочно-библиографический отдел" alt="Справочно-библиографический отдел">
+				<area shape="rect" coords="121,3,151,25" href="/Схема/206" title="Читальный зал электронных ресурсов" alt="Читальный зал электронных ресурсов">
+				<area shape="rect" coords="89,3,120,25" href="/Схема/215" title="Профессорско-преподавательский читальный зал" alt="Профессорско-преподавательский читальный зал">
+				<area shape="rect" coords="67,3,88,13" href="/Схема/214" title="Отдел комплектования" alt="Отдел комплектования">
+				<area shape="rect" coords="47,3,66,13" href="/Схема/209" title="Дирекция" alt="Дирекция">
+				<area shape="rect" coords="4,3,46,25" href="/Схема/208" title="Читальный зал гуманитарной литературы" alt="Читальный зал гуманитарной литературы">
+			</map>
+		</div>
+	</div>
+{% endblock content %}

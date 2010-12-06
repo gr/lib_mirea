@@ -1,0 +1,76 @@
+/* IE fixs for MIREA Library site */
+/* by Igor Spisivtsev */
+
+/* NEW AGE */
+ul#menu_main li,
+div#container,
+div#search,
+div#events,
+div#events li,
+div.event,
+div.post,
+div#content,
+div#content.last ul.l2,
+div#content.last ul li.l1,
+div#time_table,
+div#contacts,
+div#contacts p,
+div#copy,
+div#content.search_results p.search_message,
+div#content.search_results div.at_ecat,
+div#content.search_results div.at_site,
+div#content.search_results div.at_map,
+div#content.search_results div.in_ebooks {
+	zoom: 1;
+}
+
+ul#menu_main li,
+div#events li,
+div#time_table,
+div#contacts,
+div#copy {
+	display: inline;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+p#search_field_p {
+	margin-right: -4px;
+}
+
+div#events li,
+div#copy {
+	margin-right: -2px; /* чтобы блок не прыгал при неправильном округлении */
+}
+
+div#col3 {
+	overflow: hidden;
+}
+
+* html body#page div#search {
+	margin-right: 1.6em; /* IE6 float margin */
+}
+
+* html div#content {
+	margin-right: 374px; /* без этого отступа ИЕ6 размещает блок под блоком поиска */
+}
+* html body#search div#content {
+	margin-right: 0;
+}
+* html body#page div#content img.photo {
+	width: 100%;
+} 
+
+
+div#footer hr,
+div#time_table,
+div#contacts,
+div#copy {
+	margin-top: -7px; /* IE так показывает HR, что приходится извращаться */
+}
+
+div#contacts p {
+	position: relative;
+}
