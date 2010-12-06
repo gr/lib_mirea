@@ -10,7 +10,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-PROJECT_ROOT = os.path.dirname(__file__)
+PROJECT_ROOT = os.path.dirname(__file__) + '/../'
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'sqlite3.db'             # Or path to database file if using sqlite3.
@@ -50,7 +50,7 @@ APPEND_SLASH = True
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+#ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'p^916fbhailhoor2+yoji)9tcqfywb=b^ki6^4+981!0&sae=x'
@@ -71,13 +71,24 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    PROJECT_ROOT + '/templates/',
+    PROJECT_ROOT + 'templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
 
-FIXTURE_DIRS = ( PROJECT_ROOT + '/fixtures/', )
+FIXTURE_DIRS = ( PROJECT_ROOT + 'fixtures', )
+
+UPIMAGE_PATH =  PROJECT_ROOT + 'media/upimage'
+UPIMAGE_URL = '/media/upimage'
+
+UPIMAGE_THUMBNAIL_PATH = PROJECT_ROOT + 'media/upimage/thumbnail'
+UPIMAGE_THUMBNAIL_URL = '/media/upimage/thumbnail'
+
+UPFILE_PATH = PROJECT_ROOT + 'media/upfile'
+UPFILE_URL = '/media/upfile'
+
+ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -85,5 +96,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'apps.btools'
+    'apps.btools',
+    'apps.map',
+    'apps.site'
 )
