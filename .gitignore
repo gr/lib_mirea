@@ -1,2 +1,3 @@
-upfile/
-upimage/
+media/static/upfile/*
+media/static/upimage/*
+apps/btools
