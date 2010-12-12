@@ -1,4 +1,5 @@
 {% extends "main.html" %}
+{% load btags %}
 {% block head %}{{ block.super }}{% endblock head %}
 {% block title %}{% if keyword %}&laquo;{{ keyword }}&raquo; в НТБ МИРЭА{% else %}Не знаете, что поискать?{% endif %}{% endblock title %}
 {% block bodyid %} id="search"{% endblock bodyid %}
@@ -16,11 +17,12 @@
 		{% ifequal message "2" %}Уууф, ой как много… Нет, не показать.{% endifequal %}
 		{% ifequal message "3" %}<nobr>Мы не нашли «<span class="keyword">{{ keyword }}</span>»</nobr>{% endifequal %}
 		{% ifequal message "4" %}<nobr>Мы не нашли «<span class="keyword">{{ keyword }}</span>»</nobr>{% endifequal %}
-	<p>{% else %}	
+	<p>{% else %}
+	{% book_search 'bgu' zkeyword 'CCL' 0 100 as books %}
 	{% if books %}<div class="at_ecat">
-		<h4>в каталоге <span>{% if b_len %}{{b_len}}, показано {{books|length}}{% else %}{{books|length}}{% endif %}</span></h4>
+		<h4>в каталоге <span>{% if books_len %}{{books_len}}, показано {{books|length}}{% else %}{{books|length}}{% endif %}</span></h4>
 		<ol class="index-list">{% for book in books %}
-			<li>{% include "index-card.html" %}
+			<li>{% book_render 'main' 'bgu' book %}
 			</li>{% endfor %}
 		</ol>
 	</div>{% endif %}{# <!-- </div  class="at_ecat"> — классный перл, для потомков =) --> #}

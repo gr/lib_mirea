@@ -25,9 +25,8 @@ def item_view(request, need_type, post_id):
     else: menu = Post.objects.filter(type=need_type.id).order_by('-weight','-views')
     return render_to_response('item.html', locals())
 
-def book_view(request, db_url, post_id):
-    
-    return render_to_response('book.html', locals())
+def book_view(request, db_url, book_id):
+    return render_to_response('record.html', {'db_url':db_url, 'book_id': book_id})
 
 def search(request):
     page='search'
@@ -44,4 +43,5 @@ def search(request):
                 message = '3'
     else:
         message = '1'
+    zkeyword = '"'+keyword+'"'
     return render_to_response('search.html', locals())

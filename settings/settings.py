@@ -98,5 +98,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'apps.btools',
     'apps.map',
-    'apps.site'
+    'apps.site',
+    'pytils'
 )
