@@ -1,5 +1,6 @@
-media/upfile/
-media/upimage/
+media/upfile/*.*
+media/upimage/*.*
+media/upimage/thumbnail/*
 *.pyc
 *.~
 PyZ3950_parsetab.py
