@@ -1,3 +1,6 @@
-media/static/upfile/*
-media/static/upimage/*
-apps/btools
+media/upfile/
+media/upimage/
+*.pyc
+*.~
+PyZ3950_parsetab.py
+sqlite3.db
