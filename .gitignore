@@ -1,2 +1,7 @@
-upfile/
-upimage/
+media/upfile/*.*
+media/upimage/*.*
+media/upimage/thumbnail/*
+*.pyc
+*.~
+PyZ3950_parsetab.py
+sqlite3.db
