@@ -1,7 +1,8 @@
-media/upfile/*.*
-media/upimage/*.*
-media/upimage/thumbnail/*
+media/upfile/**
+!media/upimage/thumbnail/
+media/upimage/**
 *.pyc
 *.~
 PyZ3950_parsetab.py
 sqlite3.db
+crontab
