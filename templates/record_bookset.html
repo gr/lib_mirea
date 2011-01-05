@@ -1,0 +1,12 @@
+{% extends "pages.html" %}
+{% load btags %}
+	{% block head %}{{ block.super }}{% endblock head %}
+	{% block title %}{{ book.f200__a }}{% if book.f200__e %}: {{ book.f200__e }}{% endif %}{% if book.f200__e__2 %}: {{ book.f200__e__2 }}{% endif %}{% if book.f200__h or book.f461__200v %}. {{ book.f200__h }}{{ book.f461__200v }}{% endif %}{% endblock title %}
+	{% block menu %}{{ block.super }}{% endblock menu %}
+	{% block search %}{{ block.super }}{% endblock search %}
+	{% block content %}
+	<div id="content" class="item content-item record">
+		<h2 class="sauce_header item">{{bookset_name}}</h2>
+		 {% bookset_render bookset_name 'mode' %}
+		
+	</div>{% endblock %}
