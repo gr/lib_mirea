@@ -14,7 +14,7 @@
       {% ifequal need_type.name 'О библиотеке' %}<h2 class="about_header"><a href="/{{ need_type.name }}/{{ item.id }}">{{ item.typograf_title }}</a></h2>{% endifequal %}
       {{ item.typograf_preview }}
     </div>{% endfor %}
-    {% bookset_list 'name&desc' %}
+    {% ifnotequal need_type.name 'Справка' %}{% ifnotequal need_type.name 'Объявления' %}{% ifnotequal need_type.name 'О библиотеке' %}{% bookset_list 'name&desc' %}{% endifnotequal %}{% endifnotequal %}{% endifnotequal %}
     {% for item in items|slice:"1:" %}<div class="post">
       {% ifequal need_type.name 'Ресурсы' %}<h2 class="sauce_header"><a href="/{{ need_type.name }}/{{ item.id }}">{{ item.typograf_title }}</a></h2>{% endifequal %}
       {% ifequal need_type.name 'Справка' %}<h2 class="info_header"><a href="/{{ need_type.name }}/{{ item.id }}">{{ item.typograf_title }}</a></h2>{% endifequal %}
