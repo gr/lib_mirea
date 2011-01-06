@@ -1,5 +1,7 @@
 {% extends "main.html" %}
 
+{% load btags %}
+
 {% block head %}{{ block.super }}{% endblock head %}
 {% block title %}{{ block.super }}{% endblock title %}
 {% block bodyid %} id="index"{% endblock bodyid %}
@@ -26,23 +28,13 @@
 		</ul>
 	</div><div id="col3">
 		<div id="last">
-		{% comment %}
-			<h2><a href="/Набор/{{last_books.name}}">{{last_books.name}}</a></h2>
-			<ul>
-			{% for book in last_books.books|dictsortreversed:"id"|slice:"0:5" %}
-				<li>
-					{% if book.f700__a %}<p class="author">{{book.f700__a}}{% if book.f700__b %} {{ book.f700__b }}{% else %}{% if book.f700__g %} {{ book.f700__g }}{% endif %}{% endif %}</p>{% else %}<p class="author">{% if book.f200__f %}{{book.f200__f}}{% endif %}</p>{% endif %}
-					<p><a href="/book/{{book.id}}">{% if book.f461__200a %}{{ book.f461__200a }}: {% endif %}{{ book.f200__a }}{% if book.f200__h or book.f461__200v %}. {{ book.f200__h }}{{ book.f461__200v }}{% endif %}</a></p>
-				</li>
-			{% endfor %}
-			</ul>
-		{% endcomment %}	
+		  {% bookset_render 'Новые поступления' 'short' '' '-5' %}	
 		</div>
 		<div id="about">
 			<h2><a href="/О библиотеке/">О библиотеке</a></h2>
 			<ul>
 			{% for about in abouts %}
-				<li><a href="/О библиотеке/{{ about.id }}">{{ about.typograf_title }}</a></li>
+			  <li><a href="/О библиотеке/{{ about.id }}">{{ about.typograf_title }}</a></li>
 			{% endfor %}
 			</ul>
 		</div>
