@@ -27,6 +27,9 @@ def item_view(request, need_type, post_id):
 
 def book_view(request, db_url, book_id):
     return render_to_response('record.html', {'db_url':db_url, 'book_id': book_id})
+    
+def bookset_view(request, bookset_name):
+    return render_to_response('record_bookset.html', {'bookset_name': bookset_name})    
 
 def search(request):
     page='search'
