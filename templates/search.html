@@ -22,7 +22,7 @@
 	{% if books %}<div class="at_ecat">
 		<h4>в каталоге <span>{% if books_len %}{{books_len}}, показано {{books|length}}{% else %}{{books|length}}{% endif %}</span></h4>
 		<ol class="index-list">{% for book in books %}
-			<li>{% book_render 'main' 'bgu' book %}
+			<li>{% book_render 'bgu' book 'main' %}
 			</li>{% endfor %}
 		</ol>
 	</div>{% endif %}{# <!-- </div  class="at_ecat"> — классный перл, для потомков =) --> #}

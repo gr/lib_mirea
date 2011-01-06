@@ -7,7 +7,9 @@
 	{% block content %}
 	<div id="content" class="item content-item record">
 		<h2 class="sauce_header item">Карточка издания</h2>
-		<h2 class="request">Читательское требование</h2>{% book_render 'mode one' db_url book_id %}{% for stores in book.store %}
+		<h2 class="request">Читательское требование</h2>
+		{% book_render db_url book_id 'mode one' %}
+		{% for stores in book.store %}
 		<p class="store">{% for store in stores %}<span class="{% cycle 'name' 'count' %}">{% ifequal store 'Абонемент' %}на <a class="lending-lib" href="/Схема/103">абонементе</a>{% else %}{% ifequal store 'Читальный зал' %}в <a class="reading-room" href="/Схема/212">читальном зале</a>{% else %}{{store}}{% endifequal %}{% endifequal %}{% cycle ' ' '' %}</span>{% endfor %}</p>{% endfor %}
 		{% if book.f300__a %}<p class="about-record">{{ book.f300__a }}</p>{% endif %}
 		{#% ifequal book.type 'ebook' %#}{% if book.f856__u %}<p class="download"><a href="{{ book.f856__u }}">Читать…</a></p>{% endif %}{#% endifequal %#}
