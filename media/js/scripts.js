@@ -20,6 +20,7 @@ $(document).ready(function() {
     }
   });
   
+/* Smooth Anchors */
   $.smoothAnchors("fast", "swing", false);
 
 /* CSS для неподдерживаемых ИЕ селекторов */
@@ -32,6 +33,22 @@ $(document).ready(function() {
 		$("div#events p + p").css({ marginTop: "0" });
 		$("div#events p + p").css({ textIndent: "2.75em" });
   }
+
+/* Load More Button */
+  $("a.loadMore").click( function() {
+    $("a.loadMore").fadeOut( 50, function() {
+      $("span.loadingProgress").fadeIn(200, function() {
+        $.get("debug/tpl/search-ajax.html",function(data){          
+          $("#ecatList").append(data);
+          var countLoaded = eval( $("input#countLoaded").val() );
+          var countToLoad = eval( $("input#countToLoad").val() );
+          var totalCount = countLoaded + countToLoad;
+          $("span.countLoaded").html( totalCount );
+        },'html');
+      });
+    });
+    return false;
+  });
 
 /* Special Pages Scripts */
 /* Сборник трудов 55 */
