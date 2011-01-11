@@ -18,13 +18,19 @@
 		{% ifequal message "3" %}<nobr>Мы не нашли «<span class="keyword">{{ keyword }}</span>»</nobr>{% endifequal %}
 		{% ifequal message "4" %}<nobr>Мы не нашли «<span class="keyword">{{ keyword }}</span>»</nobr>{% endifequal %}
 	<p>{% else %}
-	{% book_search 'bgu' zkeyword 'CCL' 0 100 as books %}
+	{% book_search 'books' zkeyword 'CCL' 0 100 as books %}
 	{% if books %}<div class="at_ecat">
-		<h4>в каталоге <span>{% if books_len %}{{books_len}}, показано {{books|length}}{% else %}{{books|length}}{% endif %}</span></h4>
-		<ol class="index-list">{% for book in books %}
-			<li>{% book_render 'bgu' book 'main' %}
+	    <form id="ecatLoadMore">
+	      <input id="countFound" type="hidden" value="{{books_len}}">
+	      <input id="countLoaded" type="hidden" value="{{books|length}}">
+	      <input id="countToLoad" type="hidden" value="100">
+	    </form>
+		<h4>в каталоге <span>{% if books_len > books|length %}<span class="countFound">{{books_len}}</span>, показано <span class="countLoaded">{{books|length}}</span> <span class="loadingProgress"><img src="../media/img/ajax-loader.gif" alt="Загружаю..." title="Загружаю..." width="16px" height="16px"></span> <a class="loadMore" href="search">Показать ещё <span class="countToLoad">100</span></a>{% else %}{{books|length}}{% endif %}</span></h4>
+		<ol id="ecatList" class="index-list">{% for book in books %}
+			<li>{% book_render 'books' book 'main' %}
 			</li>{% endfor %}
 		</ol>
+		{% if books_len > books|length %}<h4>Найдено <span class="countFound">{{books_len}}</span>, показано <span class="countLoaded">{{books|length}}</span> <span class="loadingProgress"><img src="../media/img/ajax-loader.gif" alt="Загружаю..." title="Загружаю..." width="16px" height="16px"></span> <a class="loadMore" href="search">Показать ещё <span class="countToLoad">100</span></a></h4>{% endif %}
 	</div>{% endif %}{# <!-- </div  class="at_ecat"> — классный перл, для потомков =) --> #}
 	{% if items %}<div class="at_site{% if not books %} nobooks{% endif %}">
 		<h4>на сайте <span>{{items|length}}</span></h4>
