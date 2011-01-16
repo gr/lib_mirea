@@ -1,0 +1,7 @@
+{% load btags %}
+{% if ok %}
+{% book_search db_url query query_type start lenght as books %}
+{% for book in books %}<li>
+  {% book_render db_url book 'main' %}
+</li>{% endfor %}
+{% endif %}

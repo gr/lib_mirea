@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     (r'^', include('apps.map.urls')),
     (r'^', include('apps.site.urls')),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': PROJECT_ROOT + 'media', 'show_indexes': True}),
+    (r'^search-more/*', 'apps.btools.views.search_ajax', {'tpl': 'search-ajax.html'})
 )
