@@ -42,8 +42,8 @@ def search(request):
         else:
             items = Post.objects.filter(Q(title__icontains=keyword)|Q(content__icontains=keyword)).order_by('-type')
             rooms = Room.objects.filter(Q(title__icontains=keyword)|Q(content__icontains=keyword)|Q(name__icontains=keyword))
-            if len(items)==0 and len(rooms)==0:
-                message = '3'
+            #if len(items)==0 and len(rooms)==0:
+            #    message = '3'
     else:
         message = '1'
     query = '"'+keyword+'"'
