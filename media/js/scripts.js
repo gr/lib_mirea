@@ -28,8 +28,8 @@ $(document).ready(function() {
       $("div#content.simple h2 + p").css({ marginTop:"0" });
       $("div#content.simple p + blockquote").css({ marginTop: "1.375em" });
       $("div#content.simple ul li").prepend("&mdash;&nbsp;");
-      $("div#content p + p").css({ marginTop: "0" });
-      $("div#content p + p").css({ textIndent: "2.75em" });
+      $("body#page div#content p + p").css({ marginTop: "0" });
+      $("body#page div#content p + p").css({ textIndent: "2.75em" });
       $("div#events p + p").css({ marginTop: "0" });
       $("div#events p + p").css({ textIndent: "2.75em" });
   }
@@ -43,7 +43,8 @@ $(document).ready(function() {
   
   if ( found > portion ) {
       /* Инициализация и первоначальный подсчёт значения для кнопки */
-      var q = $("#search_field").val();
+      var q = $("#search_query").val();
+      var qt = $("#search_query_type").val();
       var portionToLoad = 0;
       var loaded = portion;
       var more = found - loaded;
@@ -66,9 +67,9 @@ $(document).ready(function() {
           $.get("/search-more", {
               query: q,
               db_url: "books",
-              query_type: "CCL",
+              query_type: qt,
               start: loaded,
-              len: portionToLoad
+              lenght: portionToLoad
           },function(data){          
               $("#ecatList").append(data);
               loaded = loaded + portionToLoad;

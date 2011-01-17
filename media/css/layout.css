@@ -740,6 +740,26 @@ a.loadMore:active {
   padding: 3px 9px 1px 9px;
 }
 
+a.loadMore { /* Fallback class */
+  background-color: #457A00;
+  /*border-top: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+  border-bottom: solid 1px #666;
+  border-right: solid 1px #666;*/
+}
+
+a.loadMore:hover { /* Fallback class */
+  background-color: #589C00;
+}
+
+a.loadMore:active { /* Fallback class */
+  background-color: #589C00;
+  /*border-top-color: #666;
+  border-left-color: #666;
+  border-bottom-color: #ccc;
+  border-right-color: #ccc;*/
+}
+
 span.loadingProgress {
   display: none;
   line-height: 16px;
