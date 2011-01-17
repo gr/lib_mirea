@@ -35,9 +35,11 @@
 				<form action="/search" id="search_form">
 					<p id="search_field_p"><input type="text" id="search_field" name="search_field" value="{{ keyword }}"></p>
 					<p id="search_button_p"><input type="submit" id="search_button" value="Найти"></p>
-					<p><input type="hidden" id="search_query" name="" value="{{ query }}">
-					   <input type="hidden" id="search_query_type" name="" value="{{ query_type }}"></p>
 				</form>
+				<form action="#" id="tips">
+				    <p><input type="hidden" id="search_query" name="" value="{{ query }}">
+					   <input type="hidden" id="search_query_type" name="" value="{{ query_type }}"></p>
+			    </form>
 			</div>{% endblock search %}
 			{% autoescape off %}{% block content %}{% endblock content %}{% endautoescape %}
 		</div><!-- End of div#container -->
