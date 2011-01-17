@@ -52,7 +52,7 @@
 	</div>{% endif %}
 	{% book_search 'share' query query_type 0 100 as share_books %}
 	{% if share_books %}<div class="in_ebooks{% if not books %} nobooks{% endif %}">
-		<h4>в изданиях МИРЭА <span>{% if share_books_len %}{{share_books_len}}, показано {{share_books|length}}{% else %}{{share_books|length}}{% endif %}</span></h4>
+		<h4>в изданиях МИРЭА <span>{% if share_books_len > share_books|length %}{{share_books_len}}, показано {{share_books|length}}{% else %}{{share_books|length}}{% endif %}</span></h4>
 		<ol class="index-list">{% for book in share_books %}
 			<li>{% book_render 'share' book 'main' %}
 			</li>{% endfor %}		
@@ -60,7 +60,7 @@
 	</div>{% endif %}
 	{% book_search 'ebooks' query query_type 0 100 as ebooks %}
 	{#% ifnotequal remote_ip '10.0.86.4' %#}{% if ebooks %}<div class="in_ebooks{% if not books %} nobooks{% endif %}">
-		<h4>в электронных книгах <span>{% if ebooks_len %}{{ebooks_len}}, показано {{ebooks|length}}{% else %}{{ebooks|length}}{% endif %}</span></h4>
+		<h4>в электронных книгах <span>{% if ebooks_len > ebooks|length %}{{ebooks_len}}, показано {{ebooks|length}}{% else %}{{ebooks|length}}{% endif %}</span></h4>
 		<ol class="index-list">{% for book in ebooks %}
 			<li>{% book_render 'ebooks' book 'main' %}
 			</li>{% endfor %}		
