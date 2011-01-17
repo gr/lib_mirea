@@ -46,5 +46,6 @@ def search(request):
                 message = '3'
     else:
         message = '1'
-    zkeyword = '"'+keyword+'"'
+    query = '"'+keyword+'"'
+    query_type = 'CCL'
     return render_to_response('search.html', locals())
